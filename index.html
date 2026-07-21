@@ -193,6 +193,21 @@
   .about-text p{ color:var(--text-dim); font-size:16px; margin-bottom:18px; }
   .about-text strong{ color:var(--text); font-weight:600; }
 
+  .profile-photo-wrap{
+    display:flex; align-items:center; gap:20px; margin-bottom:32px;
+  }
+  .profile-photo{
+    width:96px; height:96px; border-radius:8px; object-fit:cover;
+    border:1px solid var(--line); flex-shrink:0; background:var(--panel);
+  }
+  .profile-photo-meta .p-name{ font-family:var(--display); font-size:18px; font-weight:600; color:var(--text); margin-bottom:4px; }
+  .profile-photo-meta .p-role{ font-family:var(--mono); font-size:12px; color:var(--text-faint); }
+
+  .hero-photo{
+    width:132px; height:132px; border-radius:10px; object-fit:cover;
+    border:1px solid var(--line); margin-bottom:24px; background:var(--panel);
+  }
+
   .fact-list{ list-style:none; }
   .fact-item{
     display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--line-soft);
@@ -316,6 +331,7 @@
 <section id="hero">
   <div class="wrap hero-grid">
     <div>
+      <img src="photo.png" alt="Shehryar Asif" class="hero-photo" onerror="this.style.display='none'">
       <div class="terminal">
         <span class="prompt">$</span> <span id="typed-text">compiling shehryar_asif.dev ...</span><span class="cursor"></span>
       </div>
@@ -360,6 +376,13 @@
     <h2 class="section-title reveal">About</h2>
     <div class="about-grid">
       <div class="about-text reveal">
+        <div class="profile-photo-wrap">
+          <img src="photo.png" alt="Shehryar Asif" class="profile-photo" onerror="this.style.display='none'">
+          <div class="profile-photo-meta">
+            <div class="p-name">Shehryar Asif</div>
+            <div class="p-role">CS Undergraduate · Builder</div>
+          </div>
+        </div>
         <p>I'm a <strong>Computer Science undergraduate</strong> building across three areas that don't usually sit together: mobile apps, computer vision, and compilers.</p>
         <p>My semester projects range from a <strong>Flutter + IoT + Blockchain health monitoring system</strong> to a <strong>computer vision model for construction site safety</strong>, to a <strong>Python compiler</strong> built from the ground up — lexer, parser, and all.</p>
         <p>Right now I'm deepening my skills in <strong>AI and data science</strong>, and I enjoy taking an idea from a blank file to a working prototype fast.</p>
