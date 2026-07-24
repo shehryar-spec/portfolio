@@ -210,6 +210,10 @@
   .proj-link:hover{ color:var(--cyan); gap:9px; }
 
   .grad-1{ background:linear-gradient(120deg,#0f3d38,#0a2e34); }
+  .proj-head.has-photo{ background-size:cover; background-position:top center; height:160px; }
+  .proj-head.has-photo::after{ display:none; }
+  .proj-head.has-photo::before{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,12,20,0.1) 0%, rgba(8,12,20,0.25) 45%, rgba(8,12,20,0.92) 100%); }
+  .proj-head.has-photo .proj-match{ position:relative; z-index:2; }
   .grad-2{ background:linear-gradient(120deg,#3a1f42,#241b3f); }
   .grad-3{ background:linear-gradient(120deg,#1c2e4a,#12203a); }
   .grad-4{ background:linear-gradient(120deg,#3a2317,#2a1b2f); }
@@ -394,7 +398,7 @@
     <div class="proj-grid reveal" id="proj-grid">
 
       <div class="proj-card" data-cat="mobile">
-        <div class="proj-head grad-1"><span class="proj-icon">🩺</span><span class="proj-match">FLAGSHIP</span></div>
+        <div class="proj-head has-photo" style="background-image:url('project-photos/health-monitoring-cover.png');"><span class="proj-match">FLAGSHIP</span></div>
         <div class="proj-body">
           <div class="proj-name">Health Monitoring System</div>
           <p class="proj-desc">Flutter app streaming live vitals from an IoT sensor rig, with readings hashed, signed, and pinned to blockchain storage for tamper-proof records.</p>
