@@ -238,8 +238,13 @@ h1.hero-title .grad{background:linear-gradient(100deg,var(--cyan),var(--violet) 
 .filter-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,var(--cyan),var(--violet));opacity:0;transition:opacity .25s;z-index:-1;}
 .filter-btn:hover{color:var(--text);border-color:var(--border-bright);}
 .filter-btn.active{color:#020a0d;background:var(--cyan);border-color:var(--cyan);box-shadow:0 6px 20px rgba(0,255,213,.25);}
-.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
-@media(max-width:820px){.proj-grid{grid-template-columns:1fr;}}
+    .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+    @media(max-width:820px){.proj-grid{grid-template-columns:1fr;}}
+    .proj-card[style*="grid-column:1/-1"] .proj-body{padding:0;}
+    @media(max-width:820px){
+      .proj-card[style*="grid-column:1/-1"] > div{grid-template-columns:1fr!important;}
+      .proj-card[style*="grid-column:1/-1"] .proj-head{height:200px!important;}
+    }
 .proj-card{position:relative;background:var(--panel);border:1px solid var(--border);border-radius:22px;overflow:hidden;transition:all .4s cubic-bezier(.22,.61,.36,1);transform-style:preserve-3d;}
 .proj-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,255,213,.06),rgba(123,107,255,.04),rgba(255,74,141,.03));opacity:0;transition:opacity .4s;z-index:1;pointer-events:none;}
 .proj-card:hover{border-color:var(--border-bright);box-shadow:0 30px 70px rgba(0,0,0,.45);}
@@ -610,20 +615,41 @@ footer .f-links a:hover{color:var(--cyan);}
         </div>
       </div>
 
-      <!-- NEW: ZEVORA E-COMMERCE WEBSITE CARD -->
-      <div class="proj-card" data-cat="web">
-        <span class="proj-new-badge">NEW</span>
-        <div class="proj-head grad-5">
-          <span class="proj-icon" style="background:linear-gradient(135deg,#00ffd5,#7b6bff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Z</span>
-          <span class="proj-match">FULL STACK · SPA</span>
-        </div>
-        <div class="proj-body">
-          <div class="proj-name">ZEVORA — E-Commerce Platform</div>
-          <p class="proj-desc">A fully-functional single-page e-commerce site built in pure HTML/CSS/JS — cart, wishlist, checkout, admin panel, blog, PKR/USD currency, EN/UR language, parallax, and dark mode.</p>
-          <div class="proj-tags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JavaScript</span><span class="ptag">SPA</span><span class="ptag">i18n</span></div>
-          <a href="index.html" class="proj-link" data-cursor="hover" target="_blank">Live demo <i class="fas fa-external-link-alt"></i></a>
+      <!-- ZEVORA E-COMMERCE — FEATURED CARD -->
+      <div class="proj-card" data-cat="web" style="grid-column:1/-1;">
+        <span class="proj-new-badge">⭐ FEATURED</span>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+          <div class="proj-head" style="height:260px;background:linear-gradient(135deg,#051020 0%,#0a1f3d 40%,#0d47a1 100%);position:relative;align-items:flex-start;padding:32px;">
+            <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 50%,rgba(0,255,213,.12) 0%,transparent 60%),radial-gradient(circle at 80% 30%,rgba(123,107,255,.15) 0%,transparent 50%);"></div>
+            <div style="position:relative;z-index:2;width:100%;">
+              <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;">
+                <span style="font-family:var(--mono);font-size:10px;color:#00ffd5;background:rgba(0,255,213,.1);border:1px solid rgba(0,255,213,.25);padding:5px 12px;border-radius:20px;font-weight:700;">LIVE ON GITHUB PAGES</span>
+                <span style="font-family:var(--mono);font-size:10px;color:#ffd864;background:rgba(255,216,100,.1);border:1px solid rgba(255,216,100,.25);padding:5px 12px;border-radius:20px;font-weight:700;">SINGLE FILE SPA</span>
+              </div>
+              <div style="font-size:64px;font-weight:800;font-family:var(--display);background:linear-gradient(135deg,#00ffd5,#7b6bff,#ff4a8d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em;line-height:1;">ZEVORA</div>
+              <div style="font-family:var(--mono);font-size:11px;color:var(--text-dim);margin-top:8px;letter-spacing:.15em;text-transform:uppercase;">The Curated Marketplace</div>
+            </div>
+          </div>
+          <div class="proj-body" style="padding:36px 32px;display:flex;flex-direction:column;justify-content:center;background:var(--panel-strong);">
+            <div class="proj-name" style="font-size:22px;margin-bottom:14px;">ZEVORA — Full E-Commerce Platform</div>
+            <p class="proj-desc" style="margin-bottom:20px;font-size:15px;">A production-quality single-page e-commerce store built entirely in vanilla HTML, CSS & JavaScript. Features product catalog with real photos, functional cart & wishlist, multi-step checkout, admin panel, blog, PKR/USD currency switching, English/Urdu bilingual support with RTL layout, dark mode, parallax effects, and smooth animations — all zero dependencies.</p>
+            <div class="proj-tags" style="margin-bottom:24px;">
+              <span class="ptag">HTML5</span><span class="ptag">CSS3</span><span class="ptag">Vanilla JS</span>
+              <span class="ptag">SPA Routing</span><span class="ptag">i18n (EN/UR)</span>
+              <span class="ptag">LocalStorage</span><span class="ptag">Responsive</span>
+              <span class="ptag">Dark Mode</span>
+            </div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <a href="https://shehryar-spec.github.io/zevora-ecommerce/" target="_blank" rel="noopener" class="btn btn-primary" style="padding:12px 22px;font-size:13px;" data-cursor="hover"><i class="fas fa-external-link-alt" style="font-size:11px;"></i> Live Demo</a>
+              <a href="https://github.com/shehryar-spec/zevora-ecommerce" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:12px 22px;font-size:13px;" data-cursor="hover"><i class="fab fa-github"></i> View Code</a>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- OTHER PROJECTS -->
+      <div class="proj-card" data-cat="mobile">
+        <div class="proj-head has-photo" style="background-image:url('project-photos/health-monitoring-cover.png');"><span class="proj-match">FLAGSHIP</span></div>
     </div>
   </div>
 </section>
